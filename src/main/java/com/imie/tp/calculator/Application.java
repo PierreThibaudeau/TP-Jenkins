@@ -21,6 +21,7 @@ public class Application {
             System.out.println("4: Division");
             System.out.println("5: History");
             System.out.println("9: Addition");
+
             answer = Integer.parseInt(KeyboardUtils.readFromKeyboard("Choisissez une action: "));
             System.out.println(answer);
             System.out.println("coucou");
@@ -45,38 +46,20 @@ public class Application {
                     answer = 9;
                     break;
             }
-            answer = answer == 9 ? 9 : 0;
         }
 
         System.out.println("end");
-        // Process...
-        // Display & Ask "Type of Operation ":
-        //               - 1 : Addition
-        //               - 2 : Subtraction
-        //               - 3 : Divide
-        //               - 4 : Multiplication
-        //               - 5 : Display History
-        //               - 9 : Quit
-
-        // If enter 1
-        // Display & Ask "Enter Value a : "
-        // Display & Ask "Enter Value b : "
-        // after
-        // Display : result
 
         // If enter 5
         // Display last calculate :
         //    1 + 1 = 2
         //    2 * 3 = 6
-
-        // If enter 9 => Quit application
-
-        //TODO
     }
 
     public void Addition() {
         System.out.println("--Application::Addition");
         float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+        System.out.println("+");
         float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
 
         AdditionOperation add = new AdditionOperation(firstNumber);
@@ -88,6 +71,7 @@ public class Application {
     public void Substraction() {
         System.out.println("--Application::Substraction");
         float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+        System.out.println("-");
         float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
 
         SubstractionOperation sub = new SubstractionOperation(firstNumber);
@@ -100,6 +84,7 @@ public class Application {
         System.out.println("--Application::Multiplication");
 
         float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+        System.out.println("*");
         float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
 
         MultiplicationOperation mul = new MultiplicationOperation(firstNumber);
@@ -112,6 +97,7 @@ public class Application {
         System.out.println("--Application::Division");
 
         float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+        System.out.println("/");
         float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
 
         DivisionOperation div = new DivisionOperation(firstNumber);
