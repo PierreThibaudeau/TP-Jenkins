@@ -25,14 +25,9 @@ public class Application {
    */
   public static void main(final String[] args) {
     final Application app = new Application();
-    System.out.println("--Application::main");
 
     int answer = 0;
     while (answer != 9) {
-
-      if (answer == 0) {
-        System.out.println("Bienvenue !");
-      }
 
       System.out.println("Menu : ");
       System.out.println("1: Addition");
@@ -40,23 +35,26 @@ public class Application {
       System.out.println("3: Multiplication");
       System.out.println("4: Division");
       System.out.println("5: History");
-      System.out.println("9: Addition");
+      System.out.println("9: Quit");
+      System.out.println("\n");
 
       answer = Integer.parseInt(KeyboardUtils.readFromKeyboard("Choisissez une action: "));
-      System.out.println(answer);
-      System.out.println("coucou");
 
       switch (answer) {
         case 1:
+          System.out.println("Starting the addition");
           app.addition();
           break;
         case 2:
+          System.out.println("Starting the substraction");
           app.substraction();
           break;
         case 3:
+          System.out.println("Starting the multiplication");
           app.multiplication();
           break;
         case 4:
+          System.out.println("Starting the division");
           app.division();
           break;
         case 5:
@@ -66,6 +64,7 @@ public class Application {
           answer = 9;
           break;
       }
+      answer = answer == 9 ? 9 : 0;
     }
 
     System.out.println("end");
@@ -75,8 +74,6 @@ public class Application {
    * Add 2 numbers using the AdditionOperation Class.
    */
   public void addition() {
-    System.out.println("--Application::Addition");
-
     final float firstNumber = Application.askFirstNumber();
     System.out.println("+");
     final float secondNumber = Application.askSecondNumber();
@@ -85,16 +82,12 @@ public class Application {
     add.make(secondNumber);
 
     this.add2History(firstNumber, secondNumber, add.getCurrentValue(), " + ");
-
-    System.out.println(add.getCurrentValue());
   }
 
   /**
    * Sub 2 numbers using the SubstractionOperation Class.
    */
   public void substraction() {
-    System.out.println("--Application::Substraction");
-
     final float firstNumber = Application.askFirstNumber();
     System.out.println("-");
     final float secondNumber = Application.askSecondNumber();
@@ -103,16 +96,12 @@ public class Application {
     sub.make(secondNumber);
 
     this.add2History(firstNumber, secondNumber, sub.getCurrentValue(), " - ");
-
-    System.out.println(sub.getCurrentValue());
   }
 
   /**
    * Multiply 2 numbers using the MultiplicationOperation Class.
    */
   public void multiplication() {
-    System.out.println("--Application::Multiplication");
-
     final float firstNumber = Application.askFirstNumber();
     System.out.println("*");
     final float secondNumber = Application.askSecondNumber();
@@ -121,16 +110,12 @@ public class Application {
     mul.make(secondNumber);
 
     this.add2History(firstNumber, secondNumber, mul.getCurrentValue(), " * ");
-
-    System.out.println(mul.getCurrentValue());
   }
 
   /**
    * Divide 2 numbers using the DivisionOperation Class.
    */
   public void division() {
-    System.out.println("--Application::Division");
-
     final float firstNumber = Application.askFirstNumber();
     System.out.println("/");
     final float secondNumber = Application.askSecondNumber();
@@ -139,8 +124,6 @@ public class Application {
     div.make(secondNumber);
 
     this.add2History(firstNumber, secondNumber, div.getCurrentValue(), " / ");
-
-    System.out.println(div.getCurrentValue());
   }
 
   /**
@@ -155,8 +138,7 @@ public class Application {
       final float secondNumber,
       final float result,
       final String symbol) {
-    System.out.println("--Application::add2History");
-
+    System.out.println(firstNumber + symbol + secondNumber + " = " + result);
     this.history.addOperation(firstNumber + symbol + secondNumber + " = " + result);
   }
 
@@ -164,8 +146,6 @@ public class Application {
    * Print the history.
    */
   public void printHistory() {
-    System.out.println("--Application::History");
-
     System.out.println(this.history.getHistory());
   }
 
@@ -173,14 +153,14 @@ public class Application {
    * Ask the first number on which operate.
    */
   public static float askFirstNumber() {
-    return Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+    return Float.parseFloat(KeyboardUtils.readFromKeyboard(""));
   }
 
   /**
    * Ask the second number on which operate.
    */
   public static float askSecondNumber() {
-    return Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
+    return Float.parseFloat(KeyboardUtils.readFromKeyboard(""));
   }
 
 }
