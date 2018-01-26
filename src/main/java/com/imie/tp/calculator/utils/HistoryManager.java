@@ -7,8 +7,15 @@ import java.util.ArrayList;
  */
 public class HistoryManager {
 
-  // Singleton
+  /**
+   * Singleton instance for HistoryManager
+   */
   private static final HistoryManager instance = new HistoryManager();
+
+  /**
+   * ArrayList containing the operations
+   */
+  private final ArrayList<String> cache = new ArrayList<String>();
 
   /**
    * Constructor.
@@ -17,8 +24,6 @@ public class HistoryManager {
   public static HistoryManager getInstance() {
     return instance;
   }
-
-  private ArrayList<String> cache = new ArrayList<String>();
 
   /**
    * add an operation to the list.

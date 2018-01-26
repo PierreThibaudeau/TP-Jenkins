@@ -17,7 +17,7 @@ public class Application {
   /**
    * History Object initialization.
    */
-  private HistoryManager history = new HistoryManager();
+  private final HistoryManager history = new HistoryManager();
 
   /**
    * Application Interface.
@@ -173,16 +173,14 @@ public class Application {
    * Ask the first number on which operate.
    */
   public static float askFirstNumber() {
-    final float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
-    return firstNumber;
+    return Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
   }
 
   /**
    * Ask the second number on which operate.
    */
   public static float askSecondNumber() {
-    final float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
-    return secondNumber;
+    return Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
   }
 
 }
