@@ -9,12 +9,15 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.imie.tp.calculator.utils.HistoryManager;
+
 /**
  * @author pierre.thibaudeau
  *
  */
 public class ApplicationTest {
 
+    HistoryManager history = new HistoryManager();
     /**
      * @throws java.lang.Exception
      */
@@ -29,12 +32,39 @@ public class ApplicationTest {
     public void tearDown() throws Exception {
     }
 
-    /**
-     * Test method for {@link com.imie.tp.calculator.Application#main(java.lang.String[])}.
-     */
     @Test
     public void testMain() {
-        //fail("Not yet implemented");
+        assertTrue(true);
+    }
+
+    @Test
+    public void testAdd2History() {
+        assertTrue(true);
+    }
+
+    @Test
+    public void testHistory() {
+        assertTrue(true);
+    }
+
+    @Test
+    public void testAddition() {
+        assertTrue(true);
+    }
+
+    @Test
+    public void testSubstraction() {
+        assertTrue(true);
+    }
+
+    @Test
+    public void testDivision() {
+        assertTrue(true);
+    }
+
+    @Test
+    public void testMultiplication() {
+        assertTrue(true);
     }
 
 }

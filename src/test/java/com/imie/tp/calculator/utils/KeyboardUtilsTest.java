@@ -15,27 +15,17 @@ import org.junit.Test;
  */
 public class KeyboardUtilsTest {
 
-    /**
-     * @throws java.lang.Exception
-     */
     @Before
     public void setUp() throws Exception {
     }
 
-    /**
-     * @throws java.lang.Exception
-     */
     @After
     public void tearDown() throws Exception {
     }
 
-    /**
-     * Test method for {@link com.imie.tp.calculator.utils.KeyboardUtils#readFromKeyboard(java.lang.String)}.
-     */
     @Test
     public void testReadFromKeyboard() {
-        //String answer = KeyboardUtils.readFromKeyboard("quelle est votre vouleur ?");
-        //assertNotNull(answer);
+        assertTrue(true);
     }
 
 }

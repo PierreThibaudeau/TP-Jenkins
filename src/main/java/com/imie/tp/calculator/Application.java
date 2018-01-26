@@ -53,11 +53,6 @@ public class Application {
         }
 
         System.out.println("end");
-
-        // If enter 5
-        // Display last calculate :
-        //    1 + 1 = 2
-        //    2 * 3 = 6
     }
 
     public void Addition() {
@@ -69,7 +64,7 @@ public class Application {
         AdditionOperation add = new AdditionOperation(firstNumber);
         add.make(secondNumber);
 
-        this.addOperation(firstNumber, secondNumber, add.getCurrentValue(), " + ");
+        this.add2History(firstNumber, secondNumber, add.getCurrentValue(), " + ");
 
         System.out.println(add.getCurrentValue());
     }
@@ -83,7 +78,7 @@ public class Application {
         SubstractionOperation sub = new SubstractionOperation(firstNumber);
         sub.make(secondNumber);
 
-        this.addOperation(firstNumber, secondNumber, sub.getCurrentValue(), " - ");
+        this.add2History(firstNumber, secondNumber, sub.getCurrentValue(), " - ");
 
         System.out.println(sub.getCurrentValue());
     }
@@ -98,7 +93,7 @@ public class Application {
         MultiplicationOperation mul = new MultiplicationOperation(firstNumber);
         mul.make(secondNumber);
 
-        this.addOperation(firstNumber, secondNumber, mul.getCurrentValue(), " * ");
+        this.add2History(firstNumber, secondNumber, mul.getCurrentValue(), " * ");
 
         System.out.println(mul.getCurrentValue());
     }
@@ -113,12 +108,14 @@ public class Application {
         DivisionOperation div = new DivisionOperation(firstNumber);
         div.make(secondNumber);
 
-        this.addOperation(firstNumber, secondNumber, div.getCurrentValue(), " / ");
+        this.add2History(firstNumber, secondNumber, div.getCurrentValue(), " / ");
 
         System.out.println(div.getCurrentValue());
     }
 
-    public void addOperation(float firstNumber, float secondNumber, float result, String symbol) {
+    public void add2History(float firstNumber, float secondNumber, float result, String symbol) {
+        System.out.println("--Application::add2History");
+
         this.history.addOperation(firstNumber + symbol + secondNumber + " = " + result);
     }
 

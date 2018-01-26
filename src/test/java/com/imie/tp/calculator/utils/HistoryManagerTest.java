@@ -15,23 +15,31 @@ import org.junit.Test;
  */
 public class HistoryManagerTest {
 
-    /**
-     * @throws java.lang.Exception
-     */
+    HistoryManager history = new HistoryManager();
+
     @Before
     public void setUp() throws Exception {
+        history.addOperation("1 + 1 = 2");
     }
 
-    /**
-     * @throws java.lang.Exception
-     */
     @After
     public void tearDown() throws Exception {
     }
 
     @Test
-    public void test() {
-        //fail("Not yet implemented");
+    public void testclear() {
+        history.clear();
+        assertNotEquals("1 + 1 = 2", history.getHistory());
+    }
+
+    @Test
+    public void testAddOperation() {
+        assertTrue(true);
+    }
+
+    @Test
+    public void testGetHistory() {
+        assertNotEquals("1 + 1 = 2", history.getHistory());
     }
 
 }
