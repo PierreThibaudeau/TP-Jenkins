@@ -27,7 +27,6 @@ public class KeyboardUtilsTest {
 
   @Test
   public void testReadFromKeyboard() {
-
     ByteArrayInputStream in = new ByteArrayInputStream("My string".getBytes());
     System.setIn(in);
 
