@@ -8,12 +8,12 @@ import java.util.ArrayList;
 public class HistoryManager {
 
   /**
-   * Singleton instance for HistoryManager
+   * Singleton instance for HistoryManager.
    */
   private static final HistoryManager instance = new HistoryManager();
 
   /**
-   * ArrayList containing the operations
+   * ArrayList containing the operations.
    */
   private final ArrayList<String> cache = new ArrayList<String>();
 

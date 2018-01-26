@@ -154,7 +154,7 @@ public class Application {
       final float firstNumber,
       final float secondNumber,
       final float result,
-      final String symbol){
+      final String symbol) {
     System.out.println("--Application::add2History");
 
     this.history.addOperation(firstNumber + symbol + secondNumber + " = " + result);
