@@ -1,9 +1,14 @@
 package com.imie.tp.calculator;
 
+import com.imie.tp.calculator.utils.KeyboardUtils;
+
 public class Application {
 
     public static void main(String[] args) {
 
+        String answer = KeyboardUtils.readFromKeyboard("quelle est votre vouleur ?");
+
+        System.out.println(answer);
         // Process...
         // Display & Ask "Type of Operation ":
         //               - 1 : Addition

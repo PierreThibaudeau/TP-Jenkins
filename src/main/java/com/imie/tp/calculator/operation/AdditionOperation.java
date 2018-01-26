@@ -7,15 +7,29 @@ public class AdditionOperation extends OperationCommandBase {
         // TODO Auto-generated constructor stub
     }
 
+    /**
+     * Add parameter to initial currentValue.
+     * @param number2Add number to add.
+     */
     @Override
-    public void make(float value) {
-        // TODO Auto-generated method stub
-
+    public void make(float number2Add) {
+        this.currentValue += number2Add;
     }
 
+    /**
+     * Getter for this.currentValue.
+     * @return Current value.
+     */
     public float getCurrentValue() {
-        // TODO Auto-generated method stub
-        return 0;
+        return this.currentValue;
+    }
+
+    /**
+     * Setter for this.currentValue.
+     * @param myValue value to set.
+     */
+    public void setCurrentValue(final float myValue) {
+       this.currentValue = myValue;
     }
 
 }

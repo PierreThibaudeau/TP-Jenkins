@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.imie.tp.calculator.operation;
 
@@ -15,50 +15,32 @@ import org.junit.Test;
  */
 public class AdditionOperationTest {
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
-	}
+    AdditionOperation add;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
-	}
+    @Before
+    public void setUp(){
+        this.add = new AdditionOperation(1);
+    }
 
-	/**
-	 * Test method for {@link com.imie.tp.calculator.operation.AdditionOperation#AdditionOperation(float)}.
-	 */
-	@Test
-	public void testAdditionOperation() {
-		fail("Not yet implemented");
-	}
+    @After
+    public void tearDown(){
+    }
 
-	/**
-	 * Test method for {@link com.imie.tp.calculator.operation.AdditionOperation#make(float)}.
-	 */
-	@Test
-	public void testMake() {
-		fail("Not yet implemented");
-	}
+    @Test
+    public void testAdditionOperation() {
+        assertNotNull(this.add.getCurrentValue());
+        assertEquals(1, this.add.getCurrentValue(), 0.01);
+    }
 
-	/**
-	 * Test method for {@link com.imie.tp.calculator.operation.AdditionOperation#getCurrentValue()}.
-	 */
-	@Test
-	public void testGetCurrentValue() {
-		fail("Not yet implemented");
-	}
+    @Test
+    public void testMake() {
+        this.add.make(2);
+        assertEquals(3, this.add.getCurrentValue(), 0.01);
+    }
 
-	/**
-	 * Test method for {@link com.imie.tp.calculator.operation.OperationCommandBase#OperationCommandBase(float)}.
-	 */
-	@Test
-	public void testOperationCommandBase() {
-		fail("Not yet implemented");
-	}
-
+    @Test
+    public void testGetValue() {
+        assertNotNull(this.add.getCurrentValue());
+        assertEquals(1, this.add.getCurrentValue(), 0.01);
+    }
 }

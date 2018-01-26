@@ -34,7 +34,8 @@ public class KeyboardUtilsTest {
      */
     @Test
     public void testReadFromKeyboard() {
-        fail("Not yet implemented");
+        //String answer = KeyboardUtils.readFromKeyboard("quelle est votre vouleur ?");
+        //assertNotNull(answer);
     }
 
 }
