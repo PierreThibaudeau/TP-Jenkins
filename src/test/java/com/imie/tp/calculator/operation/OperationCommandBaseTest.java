@@ -20,6 +20,7 @@ public class OperationCommandBaseTest {
    */
   @Before
   public void setUp() throws Exception {
+
   }
 
   /**
@@ -27,5 +28,12 @@ public class OperationCommandBaseTest {
    */
   @After
   public void tearDown() throws Exception {
+  }
+
+  @Test
+  public void testOperationCommandBase() {
+    AdditionOperation add = new AdditionOperation(5);
+    assertNotNull(add.currentValue);
+    assertEquals(5, add.currentValue, 0.01);
   }
 }
