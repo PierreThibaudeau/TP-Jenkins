@@ -4,9 +4,12 @@ import com.imie.tp.calculator.operation.AdditionOperation;
 import com.imie.tp.calculator.operation.DivisionOperation;
 import com.imie.tp.calculator.operation.MultiplicationOperation;
 import com.imie.tp.calculator.operation.SubstractionOperation;
+import com.imie.tp.calculator.utils.HistoryManager;
 import com.imie.tp.calculator.utils.KeyboardUtils;
 
 public class Application {
+
+    HistoryManager history = new HistoryManager();
 
     public static void main(String[] args) {
         Application App = new Application();
@@ -14,6 +17,7 @@ public class Application {
 
         int answer = 0;
         while(answer != 9) {
+
             System.out.println("Menu : ");
             System.out.println("1: Addition");
             System.out.println("2: Soustraction");
@@ -65,6 +69,8 @@ public class Application {
         AdditionOperation add = new AdditionOperation(firstNumber);
         add.make(secondNumber);
 
+        this.addOperation(firstNumber, secondNumber, add.getCurrentValue(), " + ");
+
         System.out.println(add.getCurrentValue());
     }
 
@@ -76,6 +82,8 @@ public class Application {
 
         SubstractionOperation sub = new SubstractionOperation(firstNumber);
         sub.make(secondNumber);
+
+        this.addOperation(firstNumber, secondNumber, sub.getCurrentValue(), " - ");
 
         System.out.println(sub.getCurrentValue());
     }
@@ -90,6 +98,8 @@ public class Application {
         MultiplicationOperation mul = new MultiplicationOperation(firstNumber);
         mul.make(secondNumber);
 
+        this.addOperation(firstNumber, secondNumber, mul.getCurrentValue(), " * ");
+
         System.out.println(mul.getCurrentValue());
     }
 
@@ -103,10 +113,18 @@ public class Application {
         DivisionOperation div = new DivisionOperation(firstNumber);
         div.make(secondNumber);
 
+        this.addOperation(firstNumber, secondNumber, div.getCurrentValue(), " / ");
+
         System.out.println(div.getCurrentValue());
+    }
+
+    public void addOperation(float firstNumber, float secondNumber, float result, String symbol) {
+        this.history.addOperation(firstNumber + symbol + secondNumber + " = " + result);
     }
 
     public void History() {
         System.out.println("--Application::History");
+
+        System.out.println(this.history.getHistory());
     }
 }
