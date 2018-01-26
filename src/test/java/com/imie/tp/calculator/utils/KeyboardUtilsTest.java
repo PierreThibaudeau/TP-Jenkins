@@ -15,17 +15,17 @@ import org.junit.Test;
  */
 public class KeyboardUtilsTest {
 
-    @Before
-    public void setUp() throws Exception {
-    }
+  @Before
+  public void setUp() throws Exception {
+  }
 
-    @After
-    public void tearDown() throws Exception {
-    }
+  @After
+  public void tearDown() throws Exception {
+  }
 
-    @Test
-    public void testReadFromKeyboard() {
-        assertTrue(true);
-    }
+  @Test
+  public void testReadFromKeyboard() {
+    assertTrue(true);
+  }
 
 }

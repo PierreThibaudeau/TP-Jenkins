@@ -4,8 +4,11 @@ public abstract class OperationCommandBase implements OperationCommand {
 
   public float currentValue;
 
-  public OperationCommandBase(float baseValue)
-  {
-      this.currentValue = baseValue;
+  /**
+   * Constructor for any operation.
+   * @param baseValue Initial value.
+   */
+  public OperationCommandBase(float baseValue) {
+    this.currentValue = baseValue;
   }
 }

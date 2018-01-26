@@ -9,119 +9,145 @@ import com.imie.tp.calculator.utils.KeyboardUtils;
 
 public class Application {
 
-    HistoryManager history = new HistoryManager();
+  HistoryManager history = new HistoryManager();
 
-    public static void main(String[] args) {
-        Application App = new Application();
-        System.out.println("--Application::main");
+  /**
+   * Application Interface.
+   * @param args application inputs.
+   */
+  public static void main(String[] args) {
+    Application app = new Application();
+    System.out.println("--Application::main");
 
-        int answer = 0;
-        while(answer != 9) {
+    int answer = 0;
+    while (answer != 9) {
 
-            System.out.println("Menu : ");
-            System.out.println("1: Addition");
-            System.out.println("2: Soustraction");
-            System.out.println("3: Multiplication");
-            System.out.println("4: Division");
-            System.out.println("5: History");
-            System.out.println("9: Addition");
+      System.out.println("Menu : ");
+      System.out.println("1: Addition");
+      System.out.println("2: Soustraction");
+      System.out.println("3: Multiplication");
+      System.out.println("4: Division");
+      System.out.println("5: History");
+      System.out.println("9: Addition");
 
-            answer = Integer.parseInt(KeyboardUtils.readFromKeyboard("Choisissez une action: "));
-            System.out.println(answer);
-            System.out.println("coucou");
+      answer = Integer.parseInt(KeyboardUtils.readFromKeyboard("Choisissez une action: "));
+      System.out.println(answer);
+      System.out.println("coucou");
 
-            switch (answer) {
-                case 1:
-                    App.Addition();
-                    break;
-                case 2:
-                    App.Substraction();
-                    break;
-                case 3:
-                    App.Multiplication();
-                    break;
-                case 4:
-                    App.Division();
-                    break;
-                case 5:
-                    App.History();
-                    break;
-                default:
-                    answer = 9;
-                    break;
-            }
-        }
-
-        System.out.println("end");
+      switch (answer) {
+        case 1:
+          app.addition();
+          break;
+        case 2:
+          app.substraction();
+          break;
+        case 3:
+          app.multiplication();
+          break;
+        case 4:
+          app.division();
+          break;
+        case 5:
+          app.history();
+          break;
+        default:
+          answer = 9;
+          break;
+      }
     }
 
-    public void Addition() {
-        System.out.println("--Application::Addition");
-        float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
-        System.out.println("+");
-        float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
+    System.out.println("end");
+  }
 
-        AdditionOperation add = new AdditionOperation(firstNumber);
-        add.make(secondNumber);
+  /**
+   * Add 2 numbers using the AdditionOperation Class.
+   */
+  public void addition() {
+    System.out.println("--Application::Addition");
+    float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+    System.out.println("+");
+    float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
 
-        this.add2History(firstNumber, secondNumber, add.getCurrentValue(), " + ");
+    AdditionOperation add = new AdditionOperation(firstNumber);
+    add.make(secondNumber);
 
-        System.out.println(add.getCurrentValue());
-    }
+    this.add2History(firstNumber, secondNumber, add.getCurrentValue(), " + ");
 
-    public void Substraction() {
-        System.out.println("--Application::Substraction");
-        float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
-        System.out.println("-");
-        float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
+    System.out.println(add.getCurrentValue());
+  }
 
-        SubstractionOperation sub = new SubstractionOperation(firstNumber);
-        sub.make(secondNumber);
+  /**
+   * Sub 2 numbers using the SubstractionOperation Class.
+   */
+  public void substraction() {
+    System.out.println("--Application::Substraction");
+    float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+    System.out.println("-");
+    float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
 
-        this.add2History(firstNumber, secondNumber, sub.getCurrentValue(), " - ");
+    SubstractionOperation sub = new SubstractionOperation(firstNumber);
+    sub.make(secondNumber);
 
-        System.out.println(sub.getCurrentValue());
-    }
+    this.add2History(firstNumber, secondNumber, sub.getCurrentValue(), " - ");
 
-    public void Multiplication() {
-        System.out.println("--Application::Multiplication");
+    System.out.println(sub.getCurrentValue());
+  }
 
-        float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
-        System.out.println("*");
-        float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
+  /**
+   * Multiply 2 numbers using the MultiplicationOperation Class.
+   */
+  public void multiplication() {
+    System.out.println("--Application::Multiplication");
 
-        MultiplicationOperation mul = new MultiplicationOperation(firstNumber);
-        mul.make(secondNumber);
+    float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+    System.out.println("*");
+    float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
 
-        this.add2History(firstNumber, secondNumber, mul.getCurrentValue(), " * ");
+    MultiplicationOperation mul = new MultiplicationOperation(firstNumber);
+    mul.make(secondNumber);
 
-        System.out.println(mul.getCurrentValue());
-    }
+    this.add2History(firstNumber, secondNumber, mul.getCurrentValue(), " * ");
 
-    public void Division() {
-        System.out.println("--Application::Division");
+    System.out.println(mul.getCurrentValue());
+  }
 
-        float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
-        System.out.println("/");
-        float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
+  /**
+   * Divide 2 numbers using the DivisionOperation Class.
+   */
+  public void division() {
+    System.out.println("--Application::Division");
 
-        DivisionOperation div = new DivisionOperation(firstNumber);
-        div.make(secondNumber);
+    float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+    System.out.println("/");
+    float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
 
-        this.add2History(firstNumber, secondNumber, div.getCurrentValue(), " / ");
+    DivisionOperation div = new DivisionOperation(firstNumber);
+    div.make(secondNumber);
 
-        System.out.println(div.getCurrentValue());
-    }
+    this.add2History(firstNumber, secondNumber, div.getCurrentValue(), " / ");
 
-    public void add2History(float firstNumber, float secondNumber, float result, String symbol) {
-        System.out.println("--Application::add2History");
+    System.out.println(div.getCurrentValue());
+  }
 
-        this.history.addOperation(firstNumber + symbol + secondNumber + " = " + result);
-    }
+  /**
+   * Add an operation to the history.
+   * @param firstNumber explicit.
+   * @param secondNumber explicit.
+   * @param result explicit.
+   * @param symbol "+", "-", "*" or "/".
+   */
+  public void add2History(float firstNumber, float secondNumber, float result, String symbol) {
+    System.out.println("--Application::add2History");
 
-    public void History() {
-        System.out.println("--Application::History");
+    this.history.addOperation(firstNumber + symbol + secondNumber + " = " + result);
+  }
 
-        System.out.println(this.history.getHistory());
-    }
+  /**
+   * Print the history.
+   */
+  public void history() {
+    System.out.println("--Application::History");
+
+    System.out.println(this.history.getHistory());
+  }
 }

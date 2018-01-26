@@ -17,54 +17,55 @@ import com.imie.tp.calculator.utils.HistoryManager;
  */
 public class ApplicationTest {
 
-    HistoryManager history = new HistoryManager();
-    /**
-     * @throws java.lang.Exception
-     */
-    @Before
-    public void setUp() throws Exception {
-    }
+  HistoryManager history = new HistoryManager();
 
-    /**
-     * @throws java.lang.Exception
-     */
-    @After
-    public void tearDown() throws Exception {
-    }
+  /**
+   * @throws java.lang.Exception
+   */
+  @Before
+  public void setUp() throws Exception {
+  }
 
-    @Test
-    public void testMain() {
-        assertTrue(true);
-    }
+  /**
+   * @throws java.lang.Exception
+   */
+  @After
+  public void tearDown() throws Exception {
+  }
 
-    @Test
-    public void testAdd2History() {
-        assertTrue(true);
-    }
+  @Test
+  public void testMain() {
+    assertTrue(true);
+  }
 
-    @Test
-    public void testHistory() {
-        assertTrue(true);
-    }
+  @Test
+  public void testAdd2History() {
+    assertTrue(true);
+  }
 
-    @Test
-    public void testAddition() {
-        assertTrue(true);
-    }
+  @Test
+  public void testHistory() {
+    assertTrue(true);
+  }
 
-    @Test
-    public void testSubstraction() {
-        assertTrue(true);
-    }
+  @Test
+  public void testAddition() {
+    assertTrue(true);
+  }
 
-    @Test
-    public void testDivision() {
-        assertTrue(true);
-    }
+  @Test
+  public void testSubstraction() {
+    assertTrue(true);
+  }
 
-    @Test
-    public void testMultiplication() {
-        assertTrue(true);
-    }
+  @Test
+  public void testDivision() {
+    assertTrue(true);
+  }
+
+  @Test
+  public void testMultiplication() {
+    assertTrue(true);
+  }
 
 }
