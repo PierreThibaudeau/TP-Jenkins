@@ -11,8 +11,6 @@ public final class KeyboardUtils {
 
         String returnLine = keyboard.nextLine();
 
-        keyboard.close();
-
         return returnLine;
     }
 }

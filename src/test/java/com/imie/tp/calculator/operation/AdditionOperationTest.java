@@ -28,19 +28,26 @@ public class AdditionOperationTest {
 
     @Test
     public void testAdditionOperation() {
-        assertNotNull(this.add.getCurrentValue());
-        assertEquals(1, this.add.getCurrentValue(), 0.01);
+        assertNotNull(this.add.currentValue);
+        assertEquals(1, this.add.currentValue, 0.01);
     }
 
     @Test
     public void testMake() {
         this.add.make(2);
-        assertEquals(3, this.add.getCurrentValue(), 0.01);
+        assertEquals(3, this.add.currentValue, 0.01);
     }
 
     @Test
     public void testGetValue() {
         assertNotNull(this.add.getCurrentValue());
         assertEquals(1, this.add.getCurrentValue(), 0.01);
+    }
+
+    @Test
+    public void testSetCurrentValue() {
+        this.add.setCurrentValue(5);
+        assertNotNull(this.add.currentValue);
+        assertEquals(5, this.add.currentValue, 0.01);
     }
 }
