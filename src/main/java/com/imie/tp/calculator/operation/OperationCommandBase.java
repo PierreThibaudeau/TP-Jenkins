@@ -1,5 +1,9 @@
 package com.imie.tp.calculator.operation;
 
+/**
+ *
+ * @author mickael.gaillard
+ */
 public abstract class OperationCommandBase implements OperationCommand {
 
   public float currentValue;

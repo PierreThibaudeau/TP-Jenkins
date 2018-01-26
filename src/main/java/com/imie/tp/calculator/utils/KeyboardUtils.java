@@ -2,6 +2,9 @@ package com.imie.tp.calculator.utils;
 
 import java.util.Scanner;
 
+/**
+ * @author mickael.gaillard
+ */
 public final class KeyboardUtils {
 
   /**
@@ -10,11 +13,11 @@ public final class KeyboardUtils {
    * @return user entry.
    */
   public static String readFromKeyboard(final String displayAsk) {
-    Scanner keyboard = new Scanner(System.in);
+    final Scanner keyboard = new Scanner(System.in);
 
     System.out.println(displayAsk);
 
-    String returnLine = keyboard.nextLine();
+    final String returnLine = keyboard.nextLine();
 
     return returnLine;
   }

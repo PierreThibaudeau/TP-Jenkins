@@ -1,5 +1,9 @@
 package com.imie.tp.calculator.operation;
 
+/**
+ *
+ * @author pierre.thibaudeau
+ */
 public class AdditionOperation extends OperationCommandBase {
 
   /**

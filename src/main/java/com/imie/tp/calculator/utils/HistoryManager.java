@@ -2,6 +2,9 @@ package com.imie.tp.calculator.utils;
 
 import java.util.ArrayList;
 
+/**
+ * @author mickael.gaillard
+ */
 public class HistoryManager {
 
   // Singleton
@@ -37,9 +40,9 @@ public class HistoryManager {
    * @return history list.
    */
   public String getHistory() {
-    StringBuilder stringBuilder = new StringBuilder();
+    final StringBuilder stringBuilder = new StringBuilder();
 
-    for (String string : cache) {
+    for (final String string : cache) {
       stringBuilder.append(string + "\n");
     }
 
