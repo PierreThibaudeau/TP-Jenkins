@@ -10,7 +10,7 @@ package com.imie.tp.calculator.operation;
  */
 public class MultiplicationOperation extends OperationCommandBase {
 
-  public MultiplicationOperation(float baseValue) {
+  public MultiplicationOperation(final float baseValue) {
     super(baseValue);
   }
 
@@ -19,7 +19,7 @@ public class MultiplicationOperation extends OperationCommandBase {
    * @param number2Mul number to multiply.
    */
   @Override
-  public void make(float number2Mul) {
+  public void make(final float number2Mul) {
     this.currentValue *= number2Mul;
   }
 

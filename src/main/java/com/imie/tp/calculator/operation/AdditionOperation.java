@@ -6,7 +6,7 @@ public class AdditionOperation extends OperationCommandBase {
    * Constructor
    * @param baseValue initial value.
    */
-  public AdditionOperation(float baseValue) {
+  public AdditionOperation(final float baseValue) {
     super(baseValue);
   }
 
@@ -16,7 +16,7 @@ public class AdditionOperation extends OperationCommandBase {
    * @param number2Add number to add.
    */
   @Override
-  public void make(float number2Add) {
+  public void make(final float number2Add) {
     this.currentValue += number2Add;
   }
 

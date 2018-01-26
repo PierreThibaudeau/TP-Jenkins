@@ -14,7 +14,7 @@ public class SubstractionOperation extends OperationCommandBase {
    * Constructor.
    * @param baseValue initial value.
    */
-  public SubstractionOperation(float baseValue) {
+  public SubstractionOperation(final float baseValue) {
     super(baseValue);
   }
 
@@ -23,7 +23,7 @@ public class SubstractionOperation extends OperationCommandBase {
    * @param number2Sub number to sub.
    */
   @Override
-  public void make(float number2Sub) {
+  public void make(final float number2Sub) {
     this.currentValue -= number2Sub;
   }
 

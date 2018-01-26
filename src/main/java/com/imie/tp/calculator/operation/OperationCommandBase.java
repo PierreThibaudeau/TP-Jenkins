@@ -8,7 +8,7 @@ public abstract class OperationCommandBase implements OperationCommand {
    * Constructor for any operation.
    * @param baseValue Initial value.
    */
-  public OperationCommandBase(float baseValue) {
+  public OperationCommandBase(final float baseValue) {
     this.currentValue = baseValue;
   }
 }

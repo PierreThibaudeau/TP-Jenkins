@@ -7,20 +7,32 @@ import com.imie.tp.calculator.operation.SubstractionOperation;
 import com.imie.tp.calculator.utils.HistoryManager;
 import com.imie.tp.calculator.utils.KeyboardUtils;
 
+/**
+ *
+ * @author pierre.thibaudeau
+ * @author mickael.gaillard
+ */
 public class Application {
 
-  HistoryManager history = new HistoryManager();
+  /**
+   * History Object initialization
+   */
+  private HistoryManager history = new HistoryManager();
 
   /**
    * Application Interface.
    * @param args application inputs.
    */
-  public static void main(String[] args) {
-    Application app = new Application();
+  public static void main(final String[] args) {
+    final Application app = new Application();
     System.out.println("--Application::main");
 
     int answer = 0;
     while (answer != 9) {
+
+      if(answer == 0) {
+        System.out.println("Bienvenue !");
+      }
 
       System.out.println("Menu : ");
       System.out.println("1: Addition");
@@ -48,7 +60,7 @@ public class Application {
           app.division();
           break;
         case 5:
-          app.history();
+          app.printHistory();
           break;
         default:
           answer = 9;
@@ -64,9 +76,9 @@ public class Application {
    */
   public void addition() {
     System.out.println("--Application::Addition");
-    float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+    final float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
     System.out.println("+");
-    float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
+    final float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
 
     AdditionOperation add = new AdditionOperation(firstNumber);
     add.make(secondNumber);
@@ -81,9 +93,9 @@ public class Application {
    */
   public void substraction() {
     System.out.println("--Application::Substraction");
-    float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+    final float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
     System.out.println("-");
-    float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
+    final float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
 
     SubstractionOperation sub = new SubstractionOperation(firstNumber);
     sub.make(secondNumber);
@@ -99,9 +111,9 @@ public class Application {
   public void multiplication() {
     System.out.println("--Application::Multiplication");
 
-    float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+    final float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
     System.out.println("*");
-    float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
+    final float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
 
     MultiplicationOperation mul = new MultiplicationOperation(firstNumber);
     mul.make(secondNumber);
@@ -117,9 +129,9 @@ public class Application {
   public void division() {
     System.out.println("--Application::Division");
 
-    float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
+    final float firstNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("First Number :"));
     System.out.println("/");
-    float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
+    final float secondNumber = Float.parseFloat(KeyboardUtils.readFromKeyboard("Second Number :"));
 
     DivisionOperation div = new DivisionOperation(firstNumber);
     div.make(secondNumber);
@@ -136,7 +148,7 @@ public class Application {
    * @param result explicit.
    * @param symbol "+", "-", "*" or "/".
    */
-  public void add2History(float firstNumber, float secondNumber, float result, String symbol) {
+  public void add2History(final float firstNumber, final float secondNumber, final float result, final String symbol) {
     System.out.println("--Application::add2History");
 
     this.history.addOperation(firstNumber + symbol + secondNumber + " = " + result);
@@ -145,7 +157,7 @@ public class Application {
   /**
    * Print the history.
    */
-  public void history() {
+  public void printHistory() {
     System.out.println("--Application::History");
 
     System.out.println(this.history.getHistory());

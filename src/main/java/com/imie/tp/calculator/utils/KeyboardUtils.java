@@ -9,7 +9,7 @@ public final class KeyboardUtils {
    * @param displayAsk data asked.
    * @return user entry.
    */
-  public static String readFromKeyboard(String displayAsk) {
+  public static String readFromKeyboard(final String displayAsk) {
     Scanner keyboard = new Scanner(System.in);
 
     System.out.println(displayAsk);

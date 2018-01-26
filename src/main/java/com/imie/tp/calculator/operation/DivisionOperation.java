@@ -14,7 +14,7 @@ public class DivisionOperation extends OperationCommandBase {
    * Constructor.
    * @param baseValue initial value.
    */
-  public DivisionOperation(float baseValue) {
+  public DivisionOperation(final float baseValue) {
     super(baseValue);
   }
 
@@ -23,7 +23,7 @@ public class DivisionOperation extends OperationCommandBase {
    * @param number2Div number to divide.
    */
   @Override
-  public void make(float number2Div) {
+  public void make(final float number2Div) {
     this.currentValue = number2Div == 0 ? Integer.MIN_VALUE : this.currentValue / number2Div;
   }
 
