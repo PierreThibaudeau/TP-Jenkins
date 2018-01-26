@@ -5,6 +5,8 @@ package com.imie.tp.calculator.utils;
 
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayInputStream;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +27,11 @@ public class KeyboardUtilsTest {
 
   @Test
   public void testReadFromKeyboard() {
-    assertTrue(true);
+
+    ByteArrayInputStream in = new ByteArrayInputStream("My string".getBytes());
+    System.setIn(in);
+
+    assertEquals("My string", KeyboardUtils.readFromKeyboard(""));
   }
 
 }
